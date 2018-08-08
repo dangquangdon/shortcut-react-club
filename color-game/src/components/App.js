@@ -12,22 +12,22 @@ export class App extends React.Component {
 
 	state = {
 		squares: [
-			makeSquare(125,125,125),
-			makeSquare(0,125,125),
-			makeSquare(125,0,125),
-			makeSquare(125,125,0),
-			makeSquare(255,125,125),
-			makeSquare(125,255,125)
+			makeSquare(Math.floor(Math.random() * 256),Math.floor(Math.random() * 256),Math.floor(Math.random() * 256)),
+			makeSquare(Math.floor(Math.random() * 256),Math.floor(Math.random() * 256),Math.floor(Math.random() * 256)),
+			makeSquare(Math.floor(Math.random() * 256),Math.floor(Math.random() * 256),Math.floor(Math.random() * 256)),
+			makeSquare(Math.floor(Math.random() * 256),Math.floor(Math.random() * 256),Math.floor(Math.random() * 256)),
+			makeSquare(Math.floor(Math.random() * 256),Math.floor(Math.random() * 256),Math.floor(Math.random() * 256)),
+			makeSquare(Math.floor(Math.random() * 256),Math.floor(Math.random() * 256),Math.floor(Math.random() * 256)),
 		]
 	}
 
 	render() {
 		const { squares } = this.state;
-
+		const box = this.state.squares[Math.floor(Math.random() * 6)].color;
 		return (
 			<div>
 
-				<Header />
+				<Header rbg={box} />
 
 				<Controls />
 
